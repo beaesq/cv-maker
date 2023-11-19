@@ -16,8 +16,8 @@ function Experience({ exp, setExp, index }) {
     setExp({ ...exp, location: e.target.value }, index);
   }
 
-  function handleBeginChange(e) {
-    setExp({ ...exp, begin: e.target.value }, index);
+  function handleStartChange(e) {
+    setExp({ ...exp, start: e.target.value }, index);
   }
 
   function handleEndChange(e) {
@@ -43,8 +43,8 @@ function Experience({ exp, setExp, index }) {
       />
       <Input
         label="Start Date (optional)"
-        value={exp.begin}
-        onChange={handleBeginChange}
+        value={exp.start}
+        onChange={handleStartChange}
       />
       <Input
         label="End Date (optional)"
@@ -75,7 +75,7 @@ export default function ExperienceSection({ person, setPerson }) {
       title: "Title",
       company: "Company",
       location: "Location",
-      begin: "Year",
+      start: "Year",
       end: "Year",
       description: "Job description",
     };

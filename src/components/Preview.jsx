@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 
-function Year({ begin, end }) {
-  if (begin.length > 0 && end.length > 0) {
+function Year({ start, end }) {
+  if (start.length > 0 && end.length > 0) {
     return (
       <p>
-        {begin} - {end}
+        {start} - {end}
       </p>
     );
-  } else if (begin.length > 0) {
-    return <p>{begin}</p>;
+  } else if (start.length > 0) {
+    return <p>{start}</p>;
   } else {
     return <p>{end}</p>;
   }
@@ -23,7 +23,7 @@ function ListExperience({ experience }) {
             <p>{exp.title}</p>
             <p>{exp.company}</p>
             {exp.location.length > 0 && <p>{exp.location}</p>}
-            <Year begin={exp.begin} end={exp.end} />
+            <Year start={exp.start} end={exp.end} />
             <p>{exp.description}</p>
           </li>
         );
@@ -41,7 +41,7 @@ function ListEducation({ education }) {
             <p>{edu.degree}</p>
             <p>{edu.school}</p>
             {edu.location.length > 0 && <p>{edu.location}</p>}
-            <Year begin={edu.begin} end={edu.end} />
+            <Year start={edu.start} end={edu.end} />
           </li>
         );
       })}
@@ -83,6 +83,6 @@ ListEducation.propTypes = {
 };
 
 Year.propTypes = {
-  begin: PropTypes.string,
+  start: PropTypes.string,
   end: PropTypes.string,
 };

@@ -13,7 +13,7 @@ export const defaultPerson = {
       title: "Artist",
       company: "ATRP",
       location: "",
-      begin: "2022",
+      start: "2022",
       end: "",
       description:
         "Entertained all Kkotis around the world, met with business partners to establish realistic sales goals, ended global warming.",
@@ -23,7 +23,7 @@ export const defaultPerson = {
       title: "Member - LOONA",
       company: "Redacted",
       location: "Seoul",
-      begin: "2017",
+      start: "2017",
       end: "2022",
       description:
         "Attacked hearts, loved 4 eva, took people hi high, met with business partners to establish realistic sales goals, ended global warming.",
@@ -35,7 +35,7 @@ export const defaultPerson = {
       degree: "M.Sc. Environmental Science",
       school: "University of Kkoti",
       location: "Cheongju, South Korea",
-      begin: "2020",
+      start: "2020",
       end: "Present",
     },
     {
@@ -43,7 +43,7 @@ export const defaultPerson = {
       degree: "B.A. Music",
       school: "Kkoti University",
       location: "Cheongju, South Korea",
-      begin: "",
+      start: "",
       end: "2020",
     },
   ],
