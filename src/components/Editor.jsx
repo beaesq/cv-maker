@@ -1,3 +1,4 @@
+import EducationSection from "./EducationSection";
 import ExperienceSection from "./ExperienceSection";
 import PersonalInfoSection from "./PersonalInfoSection";
 import PropTypes from "prop-types";
@@ -10,6 +11,8 @@ export default function Editor({ person, setPerson }) {
       <PersonalInfoSection person={person} setPerson={setPerson} />
       <h3>Experience</h3>
       <ExperienceSection person={person} setPerson={setPerson} />
+      <h3>Education</h3>
+      <EducationSection person={person} setPerson={setPerson} />
     </div>
   );
 }
