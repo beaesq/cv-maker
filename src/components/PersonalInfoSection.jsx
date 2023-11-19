@@ -31,8 +31,6 @@ export default function PersonalInfoSection({ person, setPerson }) {
     setPerson({ ...person, summary: e.target.value });
   }
 
-  console.log(person);
-
   return (
     <form className="personal">
       <Input
