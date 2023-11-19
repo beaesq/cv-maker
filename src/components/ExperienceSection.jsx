@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Input from "./Input";
 import TextArea from "./TextArea";
+import { v4 as uuidv4 } from "uuid";
 
 function Experience({ exp, setExp, index }) {
   function handleTitleChange(e) {
@@ -28,7 +29,7 @@ function Experience({ exp, setExp, index }) {
   }
 
   return (
-    <section>
+    <>
       <Input label="Position" value={exp.title} onChange={handleTitleChange} />
       <Input
         label="Company"
@@ -55,7 +56,7 @@ function Experience({ exp, setExp, index }) {
         value={exp.description}
         onChange={handleDescriptionChange}
       />
-    </section>
+    </>
   );
 }
 
@@ -67,11 +68,43 @@ export default function ExperienceSection({ person, setPerson }) {
     setPerson({ ...person, experience: newExperience });
   }
 
+  function addExp() {
+    const id = uuidv4();
+    const newExp = {
+      id: id,
+      title: "Title",
+      company: "Company",
+      location: "Location",
+      begin: "Year",
+      end: "Year",
+      description: "Job description",
+    };
+
+    const newExperience = person.experience.slice();
+    newExperience.push(newExp);
+    setPerson({ ...person, experience: newExperience });
+  }
+
+  function removeExp(index) {
+    const newExperience = person.experience.slice();
+    newExperience.splice(index, 1);
+
+    setPerson({ ...person, experience: newExperience });
+  }
+
   return (
     <form className="experience">
       {person.experience.map((exp, index) => (
-        <Experience key={exp.id} exp={exp} index={index} setExp={setExp} />
+        <section key={exp.id}>
+          <button type="button" onClick={() => removeExp(index)}>
+            Delete
+          </button>
+          <Experience exp={exp} index={index} setExp={setExp} />
+        </section>
       ))}
+      <button type="button" onClick={addExp}>
+        Add
+      </button>
     </form>
   );
 }
