@@ -32,9 +32,9 @@ body {
 
 #root {
   display: grid;
-  grid-template-columns: auto clamp(400px, 40vw, 600px) ;
+  grid-template-columns: auto clamp(300px, 40vw, 550px) ;
   grid-template-rows: min-content auto;
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 25px auto;
   row-gap: 25px;
   column-gap: 10px;
@@ -61,7 +61,8 @@ h1 {
   grid-row: 2 / 3;
 }
 
-.preview section {
-  position: sticky;
-  top:10px;
+@media screen and (max-width:1200px) {
+  #root {
+    grid-template-columns: auto 45vw;
+  }
 }

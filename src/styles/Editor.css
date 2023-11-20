@@ -2,7 +2,7 @@
 
 .editor {
   display: grid;
-  row-gap: 10px;
+  row-gap: 20px;
   grid-template-columns: auto;
   margin: 0 20px;
   --light-border-color: #cccccc;
@@ -13,6 +13,12 @@
   font-family: var(--heading-font);
   font-size: 24px;
   font-weight: bold;
+}
+
+.editor form {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 40px;
 }
 
 .editor legend {
@@ -65,6 +71,8 @@
   border-bottom: 2px solid var(--light-border-color);
   box-shadow: none;
   background-color: var(--background-color);
+  width: 98%;
+  justify-self: center;
 }
 
 .editor input[type=text]:focus {
@@ -81,6 +89,8 @@
   border-bottom: 2px solid var(--light-border-color);
   box-shadow: none;
   background-color: var(--background-color);
+  width: 98%;
+  justify-self: center;
 }
 
 .editor textarea:focus {
