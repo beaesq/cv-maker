@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Poppins:ital@0;1&display=swap');
+
+body {
+  --text-color: #000000;
+  --background-color: #FDF8F0;
+  --detail-color: #E10E27;
+  --accent-color: #177499;
+  --body-font: 'Poppins', Helvetica, sans-serif;
+  --heading-font: 'Fraunces', 'Times New Roman', Times, serif;
+}

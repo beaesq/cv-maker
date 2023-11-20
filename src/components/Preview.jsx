@@ -49,29 +49,34 @@ function ListEducation({ education }) {
   );
 }
 
-export default function Preview({ person }) {
+export default function Preview({ person, className }) {
   return (
-    <div id="preview">
-      <h2>Preview</h2>
-      <p>
-        {person.firstName} {person.lastName}
-      </p>
-      <p>{person.title}</p>
-      <p>{person.phone}</p>
-      <p>{person.address}</p>
-      <p>{person.email}</p>
-      <p>Summary</p>
-      <p>{person.summary}</p>
-      <p>Experience</p>
-      <ListExperience experience={person.experience} />
-      <p>Education</p>
-      <ListEducation education={person.education} />
+    <div className={className}>
+      <section>
+        <h2>Preview</h2>
+        <div className="cv">
+          <h3>
+            {person.firstName} {person.lastName}
+          </h3>
+          <p>{person.title}</p>
+          <p>{person.phone}</p>
+          <p>{person.address}</p>
+          <p>{person.email}</p>
+          <h4 className="summary">Summary</h4>
+          <p>{person.summary}</p>
+          <h4 className="experience">Experience</h4>
+          <ListExperience experience={person.experience} />
+          <h4 className="education">Education</h4>
+          <ListEducation education={person.education} />
+        </div>
+      </section>
     </div>
   );
 }
 
 Preview.propTypes = {
   person: PropTypes.object,
+  className: PropTypes.string,
 };
 
 ListExperience.propTypes = {

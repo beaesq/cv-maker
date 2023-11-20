@@ -1,10 +1,16 @@
 import PropTypes from "prop-types";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Input({ label, value, onChange, className = "" }) {
+  const id = uuidv4();
+
   return (
-    <label className={className}>
-      {label} <input value={value} onChange={onChange} />
-    </label>
+    <>
+      <label htmlFor={id} className={className}>
+        {label}
+      </label>
+      <input type="text" id={id} value={value} onChange={onChange} />
+    </>
   );
 }
 

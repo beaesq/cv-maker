@@ -1,0 +1,67 @@
+@import "./constants.css";
+
+html, body, div, span, 
+h1, h2, h3, h4, h5, h6, p, a, 
+img, b, u, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, footer, header,
+menu, nav, section, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: auto clamp(400px, 40vw, 600px) ;
+  grid-template-rows: min-content auto;
+  max-width: 1600px;
+  margin: 25px auto;
+  row-gap: 25px;
+  column-gap: 10px;
+}
+
+h1 {
+  text-align: start;
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  font-family: var(--heading-font);
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--detail-color);
+  margin-left: 20px;
+}
+
+.editor {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.preview {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.preview section {
+  position: sticky;
+  top:10px;
+}

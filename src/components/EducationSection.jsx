@@ -46,7 +46,7 @@ function Education({ edu, index, setEdu }) {
   );
 }
 
-export default function EducationSection({ person, setPerson }) {
+export default function EducationSection({ person, setPerson, legend }) {
   function setEdu(newEdu, index) {
     const newEducation = person.education.slice();
     newEducation[index] = newEdu;
@@ -76,7 +76,8 @@ export default function EducationSection({ person, setPerson }) {
   }
 
   return (
-    <form className="education">
+    <fieldset className="education">
+      <legend>{legend}</legend>
       {person.education.map((edu, index) => (
         <section key={edu.id}>
           <button type="button" onClick={() => removeEdu(index)}>
@@ -88,13 +89,14 @@ export default function EducationSection({ person, setPerson }) {
       <button type="button" onClick={addEdu}>
         Add
       </button>
-    </form>
+    </fieldset>
   );
 }
 
 EducationSection.propTypes = {
   person: PropTypes.object,
   setPerson: PropTypes.func,
+  legend: PropTypes.string,
 };
 
 Education.propTypes = {

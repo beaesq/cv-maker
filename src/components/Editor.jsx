@@ -2,17 +2,29 @@ import EducationSection from "./EducationSection";
 import ExperienceSection from "./ExperienceSection";
 import PersonalInfoSection from "./PersonalInfoSection";
 import PropTypes from "prop-types";
+import "../styles/Editor.css";
 
-export default function Editor({ person, setPerson }) {
+export default function Editor({ person, setPerson, className }) {
   return (
-    <div id="editor">
+    <div className={className}>
       <h2>Editor</h2>
-      <h3>Personal Information</h3>
-      <PersonalInfoSection person={person} setPerson={setPerson} />
-      <h3>Experience</h3>
-      <ExperienceSection person={person} setPerson={setPerson} />
-      <h3>Education</h3>
-      <EducationSection person={person} setPerson={setPerson} />
+      <form>
+        <PersonalInfoSection
+          legend="Personal Information"
+          person={person}
+          setPerson={setPerson}
+        />
+        <ExperienceSection
+          legend="Experience"
+          person={person}
+          setPerson={setPerson}
+        />
+        <EducationSection
+          legend="Education"
+          person={person}
+          setPerson={setPerson}
+        />
+      </form>
     </div>
   );
 }
@@ -20,4 +32,5 @@ export default function Editor({ person, setPerson }) {
 Editor.propTypes = {
   setPerson: PropTypes.func,
   person: PropTypes.object,
+  className: PropTypes.string,
 };

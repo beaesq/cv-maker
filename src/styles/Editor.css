@@ -1,0 +1,89 @@
+@import "./constants.css";
+
+.editor {
+  display: grid;
+  row-gap: 10px;
+  grid-template-columns: auto;
+  margin: 0 20px;
+  --light-border-color: #cccccc;
+}
+
+.editor h2 {
+  color: var(--detail-color);
+  font-family: var(--heading-font);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.editor legend {
+  color: var(--detail-color);
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.editor fieldset {
+  border: 1px solid var(--text-color);
+  padding: 0px 15px 15px 15px;
+}
+
+.editor fieldset.personal {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 5px;
+}
+
+.editor fieldset.experience, .editor fieldset.education {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 20px;
+}
+
+.editor fieldset section {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 5px;
+
+  border: solid var(--light-border-color) 1px;
+  padding: 10px;
+}
+
+.editor label {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: var(--body-font);
+}
+
+.editor input[type=text] {
+  font-size: 16px;
+  font-family: var(--body-font);
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid var(--light-border-color);
+  box-shadow: none;
+  background-color: var(--background-color);
+}
+
+.editor input[type=text]:focus {
+  outline: none;
+  border-bottom: 2px solid var(--detail-color);
+}
+
+.editor textarea {
+  resize: vertical;
+  font-size: 16px;
+  font-family: var(--body-font);
+  padding: 5px 5px 0px 5px;
+  border: none;
+  border-bottom: 2px solid var(--light-border-color);
+  box-shadow: none;
+  background-color: var(--background-color);
+}
+
+.editor textarea:focus {
+  outline: 2px solid var(--detail-color);
+  border-bottom: 2px solid rgba(204, 204, 204, 0);
+}

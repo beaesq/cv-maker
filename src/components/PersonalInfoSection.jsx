@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Input from "./Input";
 import TextArea from "./TextArea";
 
-export default function PersonalInfoSection({ person, setPerson }) {
+export default function PersonalInfoSection({ person, setPerson, legend }) {
   function handleFirstNameChange(e) {
     setPerson({ ...person, firstName: e.target.value });
   }
@@ -32,7 +32,8 @@ export default function PersonalInfoSection({ person, setPerson }) {
   }
 
   return (
-    <form className="personal">
+    <fieldset className="personal">
+      <legend>{legend}</legend>
       <Input
         label="First Name"
         value={person.firstName}
@@ -60,11 +61,12 @@ export default function PersonalInfoSection({ person, setPerson }) {
         value={person.summary}
         onChange={handleSummaryChange}
       />
-    </form>
+    </fieldset>
   );
 }
 
 PersonalInfoSection.propTypes = {
   person: PropTypes.object,
   setPerson: PropTypes.func,
+  legend: PropTypes.string,
 };

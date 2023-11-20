@@ -60,7 +60,7 @@ function Experience({ exp, setExp, index }) {
   );
 }
 
-export default function ExperienceSection({ person, setPerson }) {
+export default function ExperienceSection({ person, setPerson, legend }) {
   function setExp(newExp, index) {
     const newExperience = person.experience.slice();
     newExperience[index] = newExp;
@@ -93,7 +93,8 @@ export default function ExperienceSection({ person, setPerson }) {
   }
 
   return (
-    <form className="experience">
+    <fieldset className="experience">
+      <legend>{legend}</legend>
       {person.experience.map((exp, index) => (
         <section key={exp.id}>
           <button type="button" onClick={() => removeExp(index)}>
@@ -105,13 +106,14 @@ export default function ExperienceSection({ person, setPerson }) {
       <button type="button" onClick={addExp}>
         Add
       </button>
-    </form>
+    </fieldset>
   );
 }
 
 ExperienceSection.propTypes = {
   person: PropTypes.object,
   setPerson: PropTypes.func,
+  legend: PropTypes.string,
 };
 
 Experience.propTypes = {
