@@ -125,9 +125,28 @@ export default function Editor({ person, setPerson, className }) {
     }
   }
 
+  let heading = "";
+  switch (activeIndex) {
+    case 0:
+      heading = "Editor";
+      break;
+    case 1:
+      heading = "Customize";
+      break;
+    case 2:
+      heading = "Load";
+      break;
+    case 3:
+      heading = "Export";
+      break;
+    default:
+      heading = "Editor";
+      break;
+  }
+
   return (
     <div className={className}>
-      <h2>Editor</h2>
+      <h2>{heading}</h2>
       <div className="panel">
         <Button
           onClick={() => setActiveIndex(0)}
