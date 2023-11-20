@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "../styles/Preview.css";
 
 function Year({ start, end }) {
   if (start.length > 0 && end.length > 0) {
@@ -59,15 +60,23 @@ export default function Preview({ person, className }) {
             {person.firstName} {person.lastName}
           </h3>
           <p>{person.title}</p>
-          <p>{person.phone}</p>
-          <p>{person.address}</p>
-          <p>{person.email}</p>
-          <h4 className="summary">Summary</h4>
-          <p>{person.summary}</p>
-          <h4 className="experience">Experience</h4>
-          <ListExperience experience={person.experience} />
-          <h4 className="education">Education</h4>
-          <ListEducation education={person.education} />
+          <div className="contact">
+            <p>{person.phone}</p>
+            <p>{person.address}</p>
+            <p>{person.email}</p>
+          </div>
+          <div className="summary">
+            <h4>Summary</h4>
+            <p>{person.summary}</p>
+          </div>
+          <div className="experience">
+            <h4>Experience</h4>
+            <ListExperience experience={person.experience} />
+          </div>
+          <div className="education">
+            <h4>Education</h4>
+            <ListEducation education={person.education} />
+          </div>
         </div>
       </section>
     </div>
