@@ -51,7 +51,7 @@ button.active {
   color: var(--background-color);
 }
 
-.editor form {
+.editor .tab {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
   display: grid;
