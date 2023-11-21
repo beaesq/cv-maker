@@ -39,24 +39,24 @@
   font-size: 3em;
   color: var(--accent-color);
   font-weight: bold;
-  margin: 20px 0px 0px 20px;
+  margin: 0.66em 0em 0em 0.66em;
 }
 
 .cv>p {
   font-size: 1.5em;
   color: var(--light-color);
-  margin-left: 20px;
+  margin-left: 1.33em;
 }
 
 .cv .contact {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: max-content max-content max-content;
-  column-gap: 20px;
+  column-gap: 2em;
 
   color: var(--light-color);
-  margin-left: 20px;
-  margin-top: 10px;
+  margin-left: 2em;
+  margin-top: 1em;
   
 }
 
@@ -64,20 +64,88 @@
   content: "|";
   color: var(--light-color);
   position: relative;
-  left: -10px;
+  left: -1em;
 }
 
 .cv div {
-  margin-top: 15px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 1.5em;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 .cv h4 {
   color: var(--accent-color);
   font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0.6em;
+}
+
+.cv ul {
+  display: grid;
+  row-gap: 1em;
+}
+
+.cv .experience li {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  column-gap: 1em;
+
+  grid-template-areas: 
+  "year title"
+  "location company"
+  "location description";
+}
+
+.cv .experience .title {
+  grid-area: title;
+  font-weight: bold;
+}
+
+.cv .experience .company {
+  grid-area: company;
+  font-weight: bold;
+}
+
+.cv .experience .year {
+  grid-area: year;
+  font-weight: bold;
+}
+
+.cv .experience .location {
+  grid-area: location;
+}
+
+.cv .experience .description {
+  grid-area: description;
+}
+
+.cv .education li {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  column-gap: 1em;
+
+  grid-template-areas: 
+  "year degree"
+  "year school"
+  "year location";
+}
+
+.cv .education .degree {
+  grid-area: degree;
+  font-weight: bold;
+} 
+
+.cv .education .school {
+  grid-area: school;
+} 
+
+.cv .education .year {
+  grid-area: year;
+  font-weight: bold;
+}
+
+.cv .education .location {
+  grid-area: location;
 }
 
 @media screen and (max-width:1200px) {

@@ -4,14 +4,14 @@ import "../styles/Preview.css";
 function Year({ start, end }) {
   if (start.length > 0 && end.length > 0) {
     return (
-      <p>
+      <p className="year">
         {start} - {end}
       </p>
     );
   } else if (start.length > 0) {
-    return <p>{start}</p>;
+    return <p className="year">{start}</p>;
   } else {
-    return <p>{end}</p>;
+    return <p className="year">{end}</p>;
   }
 }
 
@@ -21,11 +21,13 @@ function ListExperience({ experience }) {
       {experience.map((exp) => {
         return (
           <li key={exp.id}>
-            <p>{exp.title}</p>
-            <p>{exp.company}</p>
-            {exp.location.length > 0 && <p>{exp.location}</p>}
+            <p className="title">{exp.title}</p>
+            <p className="company">{exp.company}</p>
+            {exp.location.length > 0 && (
+              <p className="location">{exp.location}</p>
+            )}
             <Year start={exp.start} end={exp.end} />
-            <p>{exp.description}</p>
+            <p className="description">{exp.description}</p>
           </li>
         );
       })}
@@ -39,9 +41,11 @@ function ListEducation({ education }) {
       {education.map((edu) => {
         return (
           <li key={edu.id}>
-            <p>{edu.degree}</p>
-            <p>{edu.school}</p>
-            {edu.location.length > 0 && <p>{edu.location}</p>}
+            <p className="degree">{edu.degree}</p>
+            <p className="school">{edu.school}</p>
+            {edu.location.length > 0 && (
+              <p className="location">{edu.location}</p>
+            )}
             <Year start={edu.start} end={edu.end} />
           </li>
         );
