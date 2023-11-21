@@ -52,12 +52,12 @@ h1 {
 }
 
 .editor {
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   grid-row: 2 / 3;
 }
 
 .preview {
-  grid-column: 1 / 2;
+  grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 
