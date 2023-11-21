@@ -76,7 +76,8 @@ function CustomizeTab({ style, setStyle }) {
   }
 
   return (
-    <>
+    <fieldset>
+      <legend>Options</legend>
       <label htmlFor="accent">Accent color</label>
       <input
         onChange={handleAccentChange}
@@ -118,17 +119,20 @@ function CustomizeTab({ style, setStyle }) {
           isActive={style.layout === 0}
         />
       </div>
-    </>
+    </fieldset>
   );
 }
 
 function LoadTab({ setPerson }) {
   return (
-    <Button
-      onClick={() => setPerson(defaultPerson)}
-      text="Load Default Data"
-      title="Load Default Data"
-    />
+    <fieldset>
+      <legend>Options</legend>
+      <Button
+        onClick={() => setPerson(defaultPerson)}
+        text="Load Default Data"
+        title="Load Default Data"
+      />
+    </fieldset>
   );
 }
 
@@ -179,11 +183,14 @@ function ExportTab() {
   }
 
   return (
-    <Button
-      onClick={() => getPDF()}
-      text="Export to PDF"
-      title="Export to PDF"
-    />
+    <fieldset>
+      <legend>Options</legend>
+      <Button
+        onClick={() => getPDF()}
+        text="Export to PDF"
+        title="Export to PDF"
+      />
+    </fieldset>
   );
 }
 

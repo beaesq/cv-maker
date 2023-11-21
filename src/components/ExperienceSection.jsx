@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Input from "./Input";
 import TextArea from "./TextArea";
 import { v4 as uuidv4 } from "uuid";
+import Button from "./Button";
 
 function Experience({ exp, setExp, index }) {
   function handleTitleChange(e) {
@@ -97,15 +98,21 @@ export default function ExperienceSection({ person, setPerson, legend }) {
       <legend>{legend}</legend>
       {person.experience.map((exp, index) => (
         <section key={exp.id}>
-          <button type="button" onClick={() => removeExp(index)}>
-            Delete
-          </button>
+          <p>{"Item #" + (index + 1)}</p>
+          <Button
+            icon="mdi-trash-can"
+            onClick={() => removeExp(index)}
+            title="Delete"
+          />
           <Experience exp={exp} index={index} setExp={setExp} />
         </section>
       ))}
-      <button type="button" onClick={addExp}>
-        Add
-      </button>
+      <Button
+        icon="mdi-plus"
+        onClick={addExp}
+        text=" Add Item"
+        title="Add New Item"
+      />
     </fieldset>
   );
 }

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Input from "./Input";
 import { v4 as uuidv4 } from "uuid";
+import Button from "./Button";
 
 function Education({ edu, index, setEdu }) {
   function handleDegreeChange(e) {
@@ -80,15 +81,21 @@ export default function EducationSection({ person, setPerson, legend }) {
       <legend>{legend}</legend>
       {person.education.map((edu, index) => (
         <section key={edu.id}>
-          <button type="button" onClick={() => removeEdu(index)}>
-            Delete
-          </button>
+          <p>{"Item #" + (index + 1)}</p>
+          <Button
+            icon="mdi-trash-can"
+            onClick={() => removeEdu(index)}
+            title="Delete"
+          />
           <Education edu={edu} index={index} setEdu={setEdu} />
         </section>
       ))}
-      <button type="button" onClick={addEdu}>
-        Add
-      </button>
+      <Button
+        icon="mdi-plus"
+        onClick={addEdu}
+        text=" Add Item"
+        title="Add New Item"
+      />
     </fieldset>
   );
 }
