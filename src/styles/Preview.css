@@ -12,7 +12,7 @@
 .preview h2 {
   color: var(--detail-color);
   font-family: var(--heading-font);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   margin-left: 20px;
 }
